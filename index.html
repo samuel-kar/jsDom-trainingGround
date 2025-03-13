@@ -11,8 +11,11 @@
 </head> 
 <body>
     <script>
-        const name = getCompanyName();
-        console.log(`salt> start of body. Company name is ${name}`);
+        function getCompanyName(){
+            return "SALT";
+        }
+        
+        console.log("salt> start of body");
     </script>
         <main>
             <div>1</div>
@@ -20,10 +23,8 @@
             <div>3</div>
         </main>
     <script>
-        function getCompanyName(){
-            return "salt";
-        }
-        console.log("salt> end of body");
+        const name = getCompanyName();
+        console.log(`salt> end of body. Company name is ${name}`);
     </script>
 </body>
 </html>
