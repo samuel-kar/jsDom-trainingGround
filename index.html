@@ -6,14 +6,24 @@
     <title>JavaScript training ground</title>
 
     <script>
-        console.log("salt> We are writing to the console!");
+        console.log("salt> in the head");
     </script>
-</head>
+</head> 
 <body>
-    <main>
-        <div></div>
-        <div></div>
-        <div></div>
-    </main>
+    <script>
+        const name = getCompanyName();
+        console.log(`salt> start of body. Company name is ${name}`);
+    </script>
+        <main>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </main>
+    <script>
+        function getCompanyName(){
+            return "salt";
+        }
+        console.log("salt> end of body");
+    </script>
 </body>
 </html>
