@@ -9,6 +9,11 @@
     <script>
         console.log("salt> in the head");
     </script>
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+    </style>
 </head> 
 <body>
     <script>
@@ -18,11 +23,22 @@
             <div id="companyName">1</div>
             <div>2</div>
             <div id="companyName">3</div>
+
+            <div name="content" class="big bold bright">Content 1</div>
+            <div class="big bold" id="companyName">Content 2</div>
+            <div name="content" class="big">Content 3</div>
         </main>
     <script>
         const companyName = myFunctions.getCompanyName();
         document.getElementsByTagName("div")[1].innerHTML = companyName;
         document.getElementById("companyName").innerHTML = companyName;
+
+        const boldNodes = document.getElementsByClassName("bold");
+
+        for (let i=0;i < boldNodes.length; i++) {
+            boldNodes[i].innerHTML += "... and bold";
+        }
+
         console.log("salt> end of body.");
     </script>
 </body>
