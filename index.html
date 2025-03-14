@@ -8,6 +8,19 @@
     <script src="functions.js"></script>
     <script>
         console.log("salt> in the head");
+        function addListInMain(numberOfListItems) {
+                const ulElement = document.createElement("ul");
+
+                for (let i=0; i < numberOfListItems; i++){
+                    const liItem = document.createElement("li");
+                    liItem.textContent = `Item #${i + 1}`;
+                    
+                    ulElement.appendChild(ulElement);
+                }
+
+                const main = document.querySelector("main");
+                main.appendChild(ulElement);
+            }
     </script>
 </head> 
 <body>
@@ -22,6 +35,8 @@
             <div name="content" class="big bold bright">Content 1</div>
             <div class="big bold" id="companyName">Content 2</div>
             <div name="content" class="big">Content 3</div>
+
+
         </main>
     <script>
         const companyName = myFunctions.getCompanyName();
@@ -36,6 +51,7 @@
             boldNodesQuerySelected[i].innerHTML += " ... and bold selected with query";
         }
 
+        addListInMain(10);
         console.log("salt> end of body.");
     </script>
 </body>
