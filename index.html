@@ -20,8 +20,9 @@
             <div>3</div>
         </main>
     <script>
-        const name = getCompanyName();
-        console.log(`salt> end of body. Company name is ${name}`);
+        const companyName = myFunctions.getCompanyName();
+        document.getElementsByTagName("div")[1].innerHTML = companyName;
+        console.log("salt> end of body.");
     </script>
 </body>
 </html>
