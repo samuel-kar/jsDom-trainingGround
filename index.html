@@ -15,11 +15,18 @@
                     const liItem = document.createElement("li");
                     liItem.textContent = `Item #${i + 1}`;
                     
-                    ulElement.appendChild(ulElement);
+                    ulElement.appendChild(liItem);
                 }
 
                 const main = document.querySelector("main");
                 main.appendChild(ulElement);
+            }
+
+            function removeDivById(id){
+                const divToRemove = document.querySelector("div#" + id);
+                if (divToRemove != undefined){
+                    divToRemove.remove();
+                }
             }
     </script>
 </head> 
@@ -30,12 +37,11 @@
         <main>
             <div id="companyName">1</div>
             <div>2</div>
-            <div id="companyName">3</div>
+            <div id="anotherName">3</div>
 
             <div name="content" class="big bold bright">Content 1</div>
             <div class="big bold" id="companyName">Content 2</div>
             <div name="content" class="big">Content 3</div>
-
 
         </main>
     <script>
@@ -51,6 +57,7 @@
             boldNodesQuerySelected[i].innerHTML += " ... and bold selected with query";
         }
 
+        removeDivById("anotherName");
         addListInMain(10);
         console.log("salt> end of body.");
     </script>
