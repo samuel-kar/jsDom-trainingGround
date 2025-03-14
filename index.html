@@ -9,11 +9,6 @@
     <script>
         console.log("salt> in the head");
     </script>
-    <style>
-        .bold {
-            font-weight: bold;
-        }
-    </style>
 </head> 
 <body>
     <script>
@@ -33,10 +28,12 @@
         document.getElementsByTagName("div")[1].innerHTML = companyName;
         document.getElementById("companyName").innerHTML = companyName;
 
-        const boldNodes = document.getElementsByClassName("bold");
+        const companyNameElement = document.querySelector("#companyName");
+        companyNameElement.innerHTML = companyName + " set using a query selector by id";
 
-        for (let i=0;i < boldNodes.length; i++) {
-            boldNodes[i].innerHTML += "... and bold";
+        const boldNodesQuerySelected = document.querySelectorAll(".bold");
+        for (let i=0; i < boldNodesQuerySelected.length;i++){
+            boldNodesQuerySelected[i].innerHTML += " ... and bold selected with query";
         }
 
         console.log("salt> end of body.");
