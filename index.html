@@ -17,11 +17,12 @@
         <main>
             <div>1</div>
             <div>2</div>
-            <div>3</div>
+            <div id="companyName">3</div>
         </main>
     <script>
         const companyName = myFunctions.getCompanyName();
         document.getElementsByTagName("div")[1].innerHTML = companyName;
+        document.getElementById("companyName").innerHTML = companyName;
         console.log("salt> end of body.");
     </script>
 </body>
