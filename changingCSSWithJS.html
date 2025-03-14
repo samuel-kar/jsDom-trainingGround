@@ -16,6 +16,10 @@
             background-color: green;
             color: white;
         }
+        .zeroResult {
+            background-color: blue;
+            color: white;
+        }
 
         
     </style>
@@ -36,6 +40,10 @@
             }
             if (convertedNumber < 0){
                 element.classList.add("negativeResult");
+                return;
+            }
+            if (convertedNumber == 0) {
+                element.classList.add("zeroResult");
                 return;
             }
             element.classList.add("positiveResult");
