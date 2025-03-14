@@ -20,9 +20,35 @@
             background-color: blue;
             color: white;
         }
-
-        
     </style>
+        <script>
+            function addStyleBasedOfContent(element, content) {
+                const convertedNumber = Number(content);
+    
+                if (Number.isNaN(convertedNumber)){
+                    return;
+                }
+                if (convertedNumber < 0){
+                    element.classList.add("negativeResult");
+                    return;
+                }
+                if (convertedNumber == 0) {
+                    element.classList.add("zeroResult");
+                    return;
+                }
+                element.classList.add("positiveResult");
+            }
+            function addResultStyling() {
+                const mainResultElements = document.querySelectorAll(".mainResult");
+    
+                for (let i=0; i<mainResultElements.length; i++){
+                    const content = mainResultElements[i].textContent;
+    
+                    addStyleBasedOfContent(mainResultElements[i], content);
+                }
+            }
+            addResultStyling();
+        </script>
 </head>
 <body>
     <main>
@@ -31,33 +57,5 @@
         <h1 class="mainResult">0</h1>
         <h1 class="mainResult">A name - not a number</h1>
     </main>
-    <script>
-        function addStyleBasedOfContent(element, content) {
-            const convertedNumber = Number(content);
-
-            if (Number.isNaN(convertedNumber)){
-                return;
-            }
-            if (convertedNumber < 0){
-                element.classList.add("negativeResult");
-                return;
-            }
-            if (convertedNumber == 0) {
-                element.classList.add("zeroResult");
-                return;
-            }
-            element.classList.add("positiveResult");
-        }
-        function addResultStyling() {
-            const mainResultElements = document.querySelectorAll(".mainResult");
-
-            for (let i=0; i<mainResultElements.length; i++){
-                const content = mainResultElements[i].textContent;
-
-                addStyleBasedOfContent(mainResultElements[i], content);
-            }
-        }
-        addResultStyling();
-    </script>
 </body>
 </html>
