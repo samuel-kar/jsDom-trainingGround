@@ -73,7 +73,8 @@
                     }
                 }
             }
-            
+
+
             document.addEventListener("DOMContentLoaded", () => {
                 console.log("Document is loaded, y'all");
                 addResultStyling();
@@ -87,7 +88,27 @@
         <h1 class="mainResult">0</h1>
         <h1 class="mainResult">A name - not a number</h1>
 
-        <button onclick="invertColorsOfResults()";>Invert colors... if you dare</button>
+        <button onclick="invertColorsOfResults()";>Invert button</button>
+        <button id="btnInversion1">Invert 1</button>
+        <button id="btnInversion2">Invert 2</button>
+        <button id="btnInversion3">Invert 3</button>
+        
     </main>
+    <script>
+        //other ways to create buttons, saving for later
+        const btn1 = document.getElementById("btnInversion1");
+        btn1.addEventListener("click", () => {
+          invertColorsOfResults();
+        });
+
+        const btn2 = document.getElementById("btnInversion2");
+        btn2.onclick = () => {
+            invertColorsOfResults();
+        };
+
+        const btn3 = document.getElementById("btnInversion3")
+        btn3.onclick = invertColorsOfResults;
+
+    </script>
 </body>
 </html>
