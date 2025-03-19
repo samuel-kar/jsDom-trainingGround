@@ -11,21 +11,31 @@
             .then((response) => response.json())
             .then((data) => {
                 const userList = createUserList(data.results)
-                
+
                 element.appendChild(userList);
             });
-
         }
+        function createUserNameHeader(user) {
+            const userHeading = document.createElement("h2");
+            userHeading.textContent = `${user.name.title} ${user.name.first} ${user.name.last}`
+
+            return userHeading;
+        }
+        function createUserImage(user) {
+            const userImage = document.createElement("img");
+            userImage.src = `${user.picture.thumbnail}`;
+
+            return userImage;
+        }
+
         function createUserList(users) {
             const userList = document.createElement("div");
 
-            for (let i=0;i<data.results.length;i++) {
-                    const user = data.results[i];
-                    const userHeading = document.createElement("h2");
-                    userHeading.textContent = `${user.name.title} ${user.name.first} ${user.name.last}`
+            for (let i=0;i<users.length;i++) {
+                    
+                    const userHeading = createUserNameHeader(users[i]);
+                    const userImage = createUserImage(users[i]);
 
-                    const userImage = document.createElement("img");
-                    userImage.src = `${user.picture.thumbnail}`;
 
                     const userDiv = document.createElement("div");
                     userDiv.appendChild(userHeading);
